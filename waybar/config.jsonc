@@ -1,0 +1,77 @@
+{
+    "layer": "top",
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "hyprland/submap",
+        "group/volume",
+        "battery",
+        "network",
+        "cpu",
+        "memory"
+    ],
+    "hyprland/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "interval": 60,
+        "format": "{capacity}%"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": "exec ghostty --title=btop -e btop"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used:0.1f}G/{total:0.1f}G",
+        "tooltip": false,
+        "on-click": "exec ghostty --title=htop -e htop"
+    },
+    "network": {
+        "format": "",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "󰤭", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "󰖪",
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%d - %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#9ccfd8'><b>{}</b></span>"
+            }
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 1,
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ],
+        "on-click": "pavucontrol"
+    },
+    "group/volume": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio"
+        ]
+    }
+}

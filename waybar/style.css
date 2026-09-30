@@ -1,0 +1,80 @@
+/* Rosé Pine */
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 15px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+#workspaces button {
+  padding: 3px;
+  margin: 7px 0px 7px 7px;
+  background: transparent;
+  border-radius: 2px;
+  color: @text;
+}
+
+#workspaces button.active {
+  background: @foam;
+  color: @base;
+  font-weight: 700;
+}
+
+#clock {
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 5px 0px;
+  background: @surface;
+}
+
+#submap,
+#battery,
+#network,
+#cpu,
+#memory,
+#volume {
+  border-radius: 8px;
+  padding: 5px 8px;
+  background: @surface;
+  margin: 5px 10px 5px 0px;
+}
+
+#battery {
+  color: @foam;
+}
+
+#pulseaudio {
+  color: @rose;
+}
+
+#submap,
+#workspaces button.urgent {
+  background: @love;
+  color: @base;
+}
+
+tooltip {
+  background: @base;
+  border-radius: 5px;
+}
+
+tooltip label {
+  color: @text;
+}
