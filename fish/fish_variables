@@ -2,3 +2,4 @@
 # VERSION: 3.0
 SETUVAR EDITOR:nvim
 SETUVAR VISUAL:nvim
+SETUVAR fish_user_paths:/home/proton/\x2elocal/bin

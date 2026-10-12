@@ -1,0 +1,160 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Rosé Pine prompt for Starship (needs a Nerd Font)
+# <directory> on <branch> [status] ............ [.venv] <symbol> <version>
+
+palette = "rose_pine"
+add_newline = true
+
+# `$fill` pushes everything after it to the right edge, so this works in any shell.
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$python\
+$c\
+$cpp\
+$rust\
+$dotnet\
+$golang\
+$zig\
+$lua\
+$java\
+$kotlin\
+$nodejs\
+$php\
+$ruby\
+$swift\
+$haskell\
+$elixir\
+$line_break\
+$character"""
+
+[palettes.rose_pine]
+base = "#191724"
+surface = "#1f1d2e"
+overlay = "#26233a"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ebbcba"
+pine = "#31748f"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+highlight_low = "#21202e"
+highlight_med = "#403d52"
+highlight_high = "#524f67"
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](bold iris)"
+error_symbol = "[❯](bold love)"
+
+# ── Left side ────────────────────────────────────────────────────────────────
+
+[directory]
+style = "bold iris"
+truncation_length = 3
+truncation_symbol = "../"
+read_only = " "
+read_only_style = "love"
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[git_branch]
+style = "bold foam"
+format = '[on](muted) [$branch(:$remote_branch)]($style) '
+
+[git_status]
+style = "bold love"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+# ── Right side: languages ────────────────────────────────────────────────────
+
+[python]
+symbol = " "
+style = "gold"
+pyenv_version_name = false
+format = '[(\[$virtualenv\] )$symbol$version]($style) '
+
+[c]
+symbol = " "
+style = "foam"
+# only .c files, so C++ headers (.h) don't trigger the C module
+detect_extensions = ["c"]
+format = '[$symbol($version )]($style)'
+
+[cpp]
+disabled = false # off by default in Starship
+symbol = " "
+style = "iris"
+format = '[$symbol($version )]($style)'
+
+[rust]
+symbol = " "
+style = "love"
+format = '[$symbol($version )]($style)'
+
+[dotnet]
+symbol = "󰌛 "
+style = "iris"
+format = '[$symbol($version )]($style)'
+
+[golang]
+symbol = " "
+style = "foam"
+format = '[$symbol($version )]($style)'
+
+[zig]
+symbol = " "
+style = "gold"
+format = '[$symbol($version )]($style)'
+
+[lua]
+symbol = " "
+style = "pine"
+format = '[$symbol($version )]($style)'
+
+[java]
+symbol = " "
+style = "love"
+format = '[$symbol($version )]($style)'
+
+[kotlin]
+symbol = " "
+style = "iris"
+format = '[$symbol($version )]($style)'
+
+[nodejs]
+symbol = " "
+style = "foam"
+format = '[$symbol($version )]($style)'
+
+[php]
+symbol = " "
+style = "iris"
+format = '[$symbol($version )]($style)'
+
+[ruby]
+symbol = " "
+style = "love"
+format = '[$symbol($version )]($style)'
+
+[swift]
+symbol = " "
+style = "rose"
+format = '[$symbol($version )]($style)'
+
+[haskell]
+symbol = " "
+style = "iris"
+format = '[$symbol($version )]($style)'
+
+[elixir]
+symbol = " "
+style = "iris"
+format = '[$symbol($version )]($style)'
